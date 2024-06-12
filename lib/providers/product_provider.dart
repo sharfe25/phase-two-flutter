@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
-import 'package:phase_two_flutter/services/product_service.dart';
 
 import '../models/product_model.dart';
+import '../services/product_service.dart';
 
 class ProductProvider with ChangeNotifier {
   List<ProductModel> _products = [];
@@ -17,7 +17,7 @@ class ProductProvider with ChangeNotifier {
   ProductProvider({required ProductService productService})
       : _productService = productService;
 
-  void getAllProducts() async {
+  Future<void> getAllProducts() async {
     final Either<List<ProductModel>, int> result =
         await _productService.getAllProducts();
     result.fold((List<ProductModel> left) {
@@ -28,7 +28,7 @@ class ProductProvider with ChangeNotifier {
     });
   }
 
-  void getProductsByCategory(
+  Future<void> getProductsByCategory(
       {required String category, required BuildContext context}) async {
     _titleProductsByCategory = category;
     final Either<List<ProductModel>, int> result =

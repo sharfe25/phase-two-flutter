@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:phase_two_flutter/components/atoms/icon_buttton_widget.dart';
-import 'package:phase_two_flutter/components/tokens/app_spacing.dart';
-import 'package:phase_two_flutter/components/tokens/app_text_styles.dart';
 
+import '../atoms/icon_buttton_widget.dart';
 import '../tokens/app_colors.dart';
+import '../tokens/app_spacing.dart';
+import '../tokens/app_text_styles.dart';
 
 /// A custom app bar widget that displays a title and optional back and bag icons.
 ///

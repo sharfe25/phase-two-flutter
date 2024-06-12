@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
-import 'package:phase_two_flutter/core/api_paths.dart';
-import 'package:phase_two_flutter/models/product_model.dart';
 
+import '../core/api_paths.dart';
 import '../core/http_adapter.dart';
+import '../models/product_model.dart';
 
 class ProductService {
   Future<Either<List<ProductModel>, int>> getAllProducts() async {
@@ -44,12 +44,12 @@ class ProductService {
       url: serviceUrl,
     );
 
-    return result.fold((List<dynamic>? left) {
-      if (left == null) {
-        return const Right<List<ProductModel>, int>(400);
+    return result.fold((List<dynamic>? leftValue) {
+      if (leftValue == null) {
+        return right(400);
       }
       List<ProductModel> products = [];
-      for (final dynamic product in left) {
+      for (final dynamic product in leftValue) {
         final producModel = ProductModel.fromJson(
           product as Map<String, dynamic>,
         );
@@ -57,11 +57,11 @@ class ProductService {
         // ignore: avoid_print
         print(producModel.toString());
       }
-      return Left<List<ProductModel>, int>(
+      return left(
         products,
       );
-    }, (int right) {
-      return Right<List<ProductModel>, int>(right);
+    }, (int rightValue) {
+      return right(rightValue);
     });
   }
 }

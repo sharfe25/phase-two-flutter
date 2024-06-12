@@ -12,7 +12,7 @@ class CategoryProvider with ChangeNotifier {
 
   List<CategoryModel> get categories => _categories;
 
-  void getAllCategories() async {
+  Future<void> getAllCategories() async {
     final Either<List<CategoryModel>, int> result =
         await _categoryService.getAllCategories();
     result.fold((List<CategoryModel> left) {

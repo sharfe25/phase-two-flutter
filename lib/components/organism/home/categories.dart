@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:phase_two_flutter/components/tokens/app_spacing.dart';
 import 'package:provider/provider.dart';
 
 import '../../../providers/category_provider.dart';
 import '../../../providers/product_provider.dart';
 import '../../molecules/home/category_carousel.dart';
+import '../../tokens/app_spacing.dart';
 import '../../tokens/app_text_styles.dart';
 
 /// A widget that displays a list of categories using a carousel.
