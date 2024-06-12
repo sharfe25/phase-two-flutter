@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:phase_two_flutter/core/api_paths.dart';
 
+import '../core/api_paths.dart';
 import '../core/http_adapter.dart';
 import '../models/category_model.dart';
 

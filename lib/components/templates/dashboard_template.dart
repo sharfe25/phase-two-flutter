@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:phase_two_flutter/components/organism/custom_app_bar.dart';
-import 'package:phase_two_flutter/components/tokens/app_colors.dart';
-import 'package:phase_two_flutter/components/tokens/app_spacing.dart';
+
+import '../organism/custom_app_bar.dart';
+import '../tokens/app_colors.dart';
+import '../tokens/app_spacing.dart';
 
 /// A template widget for dashboard screens.
 ///

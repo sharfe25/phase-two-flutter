@@ -1,4 +1,5 @@
-import 'package:phase_two_flutter/models/rating_model.dart';
+
+import 'rating_model.dart';
 
 class ProductModel {
   final num id;

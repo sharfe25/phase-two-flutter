@@ -1,10 +1,10 @@
 // lib/screens/home_screen.dart
 import 'package:flutter/material.dart';
-import 'package:phase_two_flutter/components/templates/dashboard_template.dart';
-import 'package:phase_two_flutter/components/tokens/app_spacing.dart';
 import 'package:provider/provider.dart';
 import '../../providers/product_provider.dart';
 import '../organism/products_grid.dart';
+import '../templates/dashboard_template.dart';
+import '../tokens/app_spacing.dart';
 
 /// A screen that displays products belonging to a specific category.
 ///

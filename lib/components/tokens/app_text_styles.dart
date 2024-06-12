@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:phase_two_flutter/components/tokens/app_colors.dart';
-import 'package:phase_two_flutter/components/tokens/app_spacing.dart';
+
+import 'app_colors.dart';
+import 'app_spacing.dart';
 
 /// A class that defines custom text styles for the application.
 class AppTextStyles {

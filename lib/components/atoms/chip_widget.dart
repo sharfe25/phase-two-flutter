@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:phase_two_flutter/components/tokens/app_text_styles.dart';
-import 'package:phase_two_flutter/utils/string_utils.dart';
-
+import '../../utils/string_utils.dart';
 import '../tokens/app_colors.dart';
 import '../tokens/app_spacing.dart';
+import '../tokens/app_text_styles.dart';
 
 /// A custom chip widget that displays a title and handles tap events.
 ///

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:phase_two_flutter/components/tokens/app_colors.dart';
-import 'package:phase_two_flutter/components/tokens/app_spacing.dart';
+
+import '../tokens/app_colors.dart';
+import '../tokens/app_spacing.dart';
 
 /// A custom icon button widget that displays an icon and handles tap events.
 ///

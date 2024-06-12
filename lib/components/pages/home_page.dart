@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:phase_two_flutter/components/molecules/home/welcome_card.dart';
-import 'package:phase_two_flutter/components/templates/dashboard_template.dart';
 import 'package:provider/provider.dart';
 import '../../providers/product_provider.dart';
+import '../molecules/home/welcome_card.dart';
 import '../organism/home/categories.dart';
 import '../organism/products_grid.dart';
+import '../templates/dashboard_template.dart';
 
 /// A screen that serves as the home page of the application.
 ///

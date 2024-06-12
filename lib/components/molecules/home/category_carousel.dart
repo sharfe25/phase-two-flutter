@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:phase_two_flutter/components/atoms/chip_widget.dart';
-import 'package:phase_two_flutter/components/tokens/app_spacing.dart';
 
 import '../../../providers/category_provider.dart';
 import '../../../providers/product_provider.dart';
+import '../../atoms/chip_widget.dart';
+import '../../tokens/app_spacing.dart';
 
 /// A widget that displays a horizontal carousel of category chips.
 ///
