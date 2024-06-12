@@ -23,7 +23,9 @@ class ProductProvider with ChangeNotifier {
     result.fold((List<ProductModel> left) {
       _products = left;
       notifyListeners();
-    }, (int right) async {});
+    }, (int right) async {
+      print('Error $right');
+    });
   }
 
   void getProductsByCategory(
@@ -38,6 +40,8 @@ class ProductProvider with ChangeNotifier {
         '/products_by_category',
       );
       notifyListeners();
-    }, (int right) async {});
+    }, (int right) async {
+      print('Error $right');
+    });
   }
 }

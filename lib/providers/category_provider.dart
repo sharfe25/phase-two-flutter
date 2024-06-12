@@ -18,6 +18,8 @@ class CategoryProvider with ChangeNotifier {
     result.fold((List<CategoryModel> left) {
       _categories = left;
       notifyListeners();
-    }, (int right) async {});
+    }, (int right) async {
+      print('Error $right');
+    });
   }
 }
