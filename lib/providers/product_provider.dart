@@ -5,7 +5,7 @@ import '../models/product_model.dart';
 import '../services/product_service.dart';
 
 class ProductProvider with ChangeNotifier {
-  bool _isLoading = false;
+  bool _isLoading = true;
   List<ProductModel> _products = [];
   List<ProductModel> _productsByCategory = [];
   String? _titleProductsByCategory;
@@ -20,8 +20,6 @@ class ProductProvider with ChangeNotifier {
       : _productService = productService;
 
   Future<void> getAllProducts() async {
-    _isLoading = true;
-    notifyListeners();
     final Either<List<ProductModel>, int> result =
         await _productService.getAllProducts();
     result.fold((List<ProductModel> left) {

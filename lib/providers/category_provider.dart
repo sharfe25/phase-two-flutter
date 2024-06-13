@@ -4,7 +4,7 @@ import '../models/category_model.dart';
 import '../services/category_service.dart';
 
 class CategoryProvider with ChangeNotifier {
-  bool _isLoading = false;
+  bool _isLoading = true;
   List<CategoryModel> _categories = [];
   final CategoryService _categoryService;
 
@@ -15,8 +15,6 @@ class CategoryProvider with ChangeNotifier {
   bool get isLoading => _isLoading;
 
   Future<void> getAllCategories() async {
-    _isLoading = true;
-    notifyListeners();
     final Either<List<CategoryModel>, int> result =
         await _categoryService.getAllCategories();
     result.fold((List<CategoryModel> left) {
