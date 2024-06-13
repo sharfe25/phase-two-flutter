@@ -17,7 +17,7 @@ class CategoryPage extends StatelessWidget {
   Widget build(BuildContext context) {
     // Retrieve the product provider
     ProductProvider productProvider =
-        Provider.of<ProductProvider>(context, listen: false);
+        Provider.of<ProductProvider>(context, listen: true);
     
     // Return the dashboard template with the category products
     return DashboardTemplate(
@@ -32,6 +32,7 @@ class CategoryPage extends StatelessWidget {
               height: AppSpacing.small,
             ),
             ProductsGrid(
+              isLoading: productProvider.isLoading,
               title: '${productProvider.titleProductsByCategory} (${productProvider.productsByCategory.length})',
               products: productProvider.productsByCategory,
             ),

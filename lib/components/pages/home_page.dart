@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    
+
     // Initialize the product provider and fetch all products
     productProvider = Provider.of<ProductProvider>(context, listen: false);
     productProvider.getAllProducts();
@@ -44,6 +44,7 @@ class _HomePageState extends State<HomePage> {
             Categories(productProvider: productProvider),
             // Display the products grid with new arrivals
             ProductsGrid(
+              isLoading: productProvider.isLoading,
               title: 'New Arrival',
               // Retrieve products using the product provider
               products: context.watch<ProductProvider>().products,

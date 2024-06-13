@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phase_two_flutter/components/molecules/skeletons/categories_skeleton.dart';
 import 'package:provider/provider.dart';
 
 import '../../../providers/category_provider.dart';
@@ -53,11 +54,14 @@ class _CategoriesState extends State<Categories> {
               style: AppTextStyles.subtitle,
             ),
           ),
+          // Display the skeleton
+          if (categoryProvider.isLoading) const CategoriesSkeleton(),
           // Display the category carousel
-          CategoryCarousel(
-            categoryProvider: categoryProvider,
-            productProvider: widget.productProvider,
-          ),
+          if (!categoryProvider.isLoading)
+            CategoryCarousel(
+              categoryProvider: categoryProvider,
+              productProvider: widget.productProvider,
+            ),
         ],
       ),
     );

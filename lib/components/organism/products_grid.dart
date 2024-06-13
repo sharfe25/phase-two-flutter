@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phase_two_flutter/components/molecules/skeletons/products_grid_skeleton.dart';
 
 import '../../models/product_model.dart';
 import '../../utils/string_utils.dart';
@@ -17,10 +18,17 @@ class ProductsGrid extends StatelessWidget {
   /// The list of products to be displayed in the grid.
   final List<ProductModel> products;
 
+  /// The load indicator.
+  final bool isLoading;
+
   /// Creates a [ProductsGrid].
   ///
   /// The [title] and [products] parameters are required.
-  const ProductsGrid({Key? key, required this.title, required this.products})
+  const ProductsGrid(
+      {Key? key,
+      required this.title,
+      required this.products,
+      this.isLoading = false})
       : super(key: key);
 
   @override
@@ -40,22 +48,25 @@ class ProductsGrid extends StatelessWidget {
               style: AppTextStyles.subtitle,
             ),
           ),
+          //Display the skeleton
+          if (isLoading) const ProductsGridSkeleton(),
           // Display the grid of product cards
-          GridView.builder(
-            shrinkWrap: true,
-            padding: const EdgeInsets.symmetric(vertical: AppSpacing.small),
-            physics: const NeverScrollableScrollPhysics(),
-            itemCount: products.length,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              mainAxisSpacing: 20.0,
-              crossAxisSpacing: 12.0,
-              childAspectRatio: 1 / 1.5,
+          if (!isLoading)
+            GridView.builder(
+              shrinkWrap: true,
+              padding: const EdgeInsets.symmetric(vertical: AppSpacing.small),
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: products.length,
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                mainAxisSpacing: 20.0,
+                crossAxisSpacing: 12.0,
+                childAspectRatio: 1 / 1.5,
+              ),
+              itemBuilder: (context, index) {
+                return ProductCard(product: products[index]);
+              },
             ),
-            itemBuilder: (context, index) {
-              return ProductCard(product: products[index]);
-            },
-          ),
         ],
       ),
     );
